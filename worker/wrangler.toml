@@ -1,0 +1,10 @@
+name = "kenya-quest-api"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+[observability]
+enabled = true
+
+# No bindings today — no DB, no KV, no secrets. The current app has no auth,
+# no database, and no external services (see MIGRATION.md). Add bindings here
+# if/when that changes, and add matching entries in src/types.ts Env.
