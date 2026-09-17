@@ -1,6 +1,10 @@
 // Mirrors the FastAPI CORSMiddleware config in server/main.py: GET only, any header,
-// origin allow-list. Extend ALLOWED_ORIGINS (env) once the Pages frontend has a real domain.
-const DEFAULT_ALLOWED_ORIGINS = ['http://localhost:5173', 'http://127.0.0.1:5173']
+// origin allow-list. Extend ALLOWED_ORIGINS (env) if more frontend origins are added.
+const DEFAULT_ALLOWED_ORIGINS = [
+  'http://localhost:5173',
+  'http://127.0.0.1:5173',
+  'https://ff7c3cd9-kenya-quest-client.waynekip123.workers.dev',
+]
 
 export function corsHeaders(request: Request, extraOrigins: string[] = []): HeadersInit {
   const origin = request.headers.get('Origin') ?? ''
