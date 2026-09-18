@@ -11,6 +11,7 @@
     "mapsUrl": "https://maps.google.com/?q=Kenyatta+International+Convention+Centre+Nairobi",
     "lat": -1.2889,
     "lng": 36.8233,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Nairobi_skyline_from_Uhuru_Park.jpg/960px-Nairobi_skyline_from_Uhuru_Park.jpg",
     "relatedQuests": ["kicc-city-quest"]
   },
   {
@@ -25,6 +26,7 @@
     "mapsUrl": "https://maps.google.com/?q=City+Market+Nairobi",
     "lat": -1.283,
     "lng": 36.821,
+    "image": "https://images.unsplash.com/photo-1533900298318-6b8da08a523e",
     "relatedQuests": ["kicc-city-quest"]
   },
   {
@@ -39,6 +41,7 @@
     "mapsUrl": "https://maps.google.com/?q=Jamia+Mosque+Nairobi",
     "lat": -1.2833,
     "lng": 36.8194,
+    "image": "https://images.unsplash.com/photo-1519817650390-64a93db51149",
     "relatedQuests": ["kicc-city-quest"]
   },
   {
@@ -53,6 +56,7 @@
     "mapsUrl": "https://maps.google.com/?q=Nairobi+Gallery",
     "lat": -1.2866,
     "lng": 36.8189,
+    "image": "https://images.unsplash.com/photo-1554907984-15263bfd63bd",
     "relatedQuests": ["nairobi-museum-quest"]
   },
   {
@@ -67,6 +71,7 @@
     "mapsUrl": "https://maps.google.com/?q=Uhuru+Park+Nairobi",
     "lat": -1.2921,
     "lng": 36.815,
+    "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
     "relatedQuests": ["kicc-city-quest"]
   },
   {
@@ -81,6 +86,7 @@
     "mapsUrl": "https://maps.google.com/?q=Nairobi+National+Museum",
     "lat": -1.274,
     "lng": 36.8146,
+    "image": "https://images.unsplash.com/photo-1554907984-15263bfd63bd",
     "relatedQuests": ["nairobi-museum-quest"]
   },
   {
@@ -95,6 +101,7 @@
     "mapsUrl": "https://maps.google.com/?q=Nairobi+Arboretum",
     "lat": -1.2739,
     "lng": 36.8007,
+    "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
     "relatedQuests": ["nairobi-museum-quest"]
   },
   {
@@ -109,6 +116,7 @@
     "mapsUrl": "https://maps.google.com/?q=Karura+Forest+Nairobi",
     "lat": -1.2419,
     "lng": 36.8317,
+    "image": "https://images.unsplash.com/photo-1448375240586-882707db888b",
     "relatedQuests": ["karura-nature-quest"]
   },
   {
@@ -123,6 +131,7 @@
     "mapsUrl": "https://maps.google.com/?q=River+Cafe+Karura+Forest",
     "lat": -1.2446,
     "lng": 36.8313,
+    "image": "https://images.unsplash.com/photo-1521017432531-fbd92d768814",
     "relatedQuests": ["karura-nature-quest"]
   },
   {
@@ -137,6 +146,7 @@
     "mapsUrl": "https://maps.google.com/?q=Village+Market+Nairobi",
     "lat": -1.2287,
     "lng": 36.8033,
+    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8",
     "relatedQuests": ["karura-nature-quest"]
   },
   {
@@ -151,6 +161,7 @@
     "mapsUrl": "https://maps.google.com/?q=Karen+Blixen+Museum",
     "lat": -1.3503,
     "lng": 36.712,
+    "image": "https://images.unsplash.com/photo-1554907984-15263bfd63bd",
     "relatedQuests": ["karen-experience-quest"]
   },
   {
@@ -165,6 +176,7 @@
     "mapsUrl": "https://maps.google.com/?q=Giraffe+Centre+Nairobi",
     "lat": -1.3752,
     "lng": 36.7443,
+    "image": "https://images.unsplash.com/photo-1547721064-da6cfb341d50",
     "relatedQuests": ["karen-experience-quest"]
   },
   {
@@ -179,6 +191,7 @@
     "mapsUrl": "https://maps.google.com/?q=Talisman+Restaurant+Karen",
     "lat": -1.342,
     "lng": 36.7139,
+    "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
     "relatedQuests": ["karen-experience-quest"]
   },
   {
@@ -193,6 +206,7 @@
     "mapsUrl": "https://maps.google.com/?q=Kazuri+Beads+Karen",
     "lat": -1.3567,
     "lng": 36.7206,
+    "image": "https://images.unsplash.com/photo-1610701596007-11502861dcfa",
     "relatedQuests": ["karen-experience-quest"]
   },
   {
@@ -207,6 +221,7 @@
     "mapsUrl": "https://maps.google.com/?q=Sarit+Centre+Westlands",
     "lat": -1.262,
     "lng": 36.802,
+    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8",
     "relatedQuests": ["westlands-food-quest"]
   },
   {
@@ -221,6 +236,7 @@
     "mapsUrl": "https://maps.google.com/?q=Artcaffe+Westlands",
     "lat": -1.2657,
     "lng": 36.8037,
+    "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085",
     "relatedQuests": ["westlands-food-quest"]
   },
   {
@@ -235,6 +251,7 @@
     "mapsUrl": "https://maps.google.com/?q=K1+Klub+House+Nairobi",
     "lat": -1.2626,
     "lng": 36.7996,
+    "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
     "relatedQuests": ["westlands-food-quest"]
   },
   {
@@ -249,6 +266,7 @@
     "mapsUrl": "https://maps.google.com/?q=Mama+Oliech+Restaurant+Nairobi",
     "lat": -1.2949,
     "lng": 36.7849,
+    "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
     "relatedQuests": ["westlands-food-quest"]
   },
   {
@@ -263,6 +281,7 @@
     "mapsUrl": "https://maps.google.com/?q=Yaya+Centre+Nairobi",
     "lat": -1.2947,
     "lng": 36.7838,
+    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8",
     "relatedQuests": []
   },
   {
@@ -277,6 +296,7 @@
     "mapsUrl": "https://maps.google.com/?q=Tribe+Hotel+Nairobi",
     "lat": -1.2293,
     "lng": 36.8041,
+    "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945",
     "relatedQuests": []
   }
 ]

@@ -14,6 +14,7 @@ export interface Quest {
   difficulty: string
   lat: number
   lng: number
+  image: string
   mapUrl: string
   tasks: QuestTask[]
   nearbyPlaces: string[]
@@ -31,6 +32,7 @@ export interface Place {
   mapsUrl: string
   lat: number
   lng: number
+  image: string
   relatedQuests: string[]
 }
 
@@ -49,8 +51,9 @@ export interface Location {
   description: string
   lat: number
   lng: number
+  image: string
 }
 
 export interface Env {
-  // No bindings today — no DB, no KV, no secrets. Add here if that changes.
+  ALLOWED_ORIGINS?: string
 }

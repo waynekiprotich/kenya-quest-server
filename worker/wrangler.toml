@@ -5,6 +5,5 @@ compatibility_date = "2025-01-01"
 [observability]
 enabled = true
 
-# No bindings today — no DB, no KV, no secrets. The current app has no auth,
-# no database, and no external services (see MIGRATION.md). Add bindings here
-# if/when that changes, and add matching entries in src/types.ts Env.
+# Set ALLOWED_ORIGINS as a comma-separated variable for direct cross-origin consumers.
+# The client service binding uses the same origin and needs no CORS setting.

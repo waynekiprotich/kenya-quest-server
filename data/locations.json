@@ -5,7 +5,8 @@
     "tagline": "Explore the heart of Nairobi.",
     "description": "Towers, markets and street food packed into a walkable grid. The city at full volume.",
     "lat": -1.2841,
-    "lng": 36.8233
+    "lng": 36.8233,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Nairobi_skyline_from_Uhuru_Park.jpg/960px-Nairobi_skyline_from_Uhuru_Park.jpg"
   },
   {
     "id": "karen",
@@ -13,7 +14,8 @@
     "tagline": "Green, slow and colonial-era quiet.",
     "description": "Leafy roads, horse country, museums and long lunches under old trees.",
     "lat": -1.3197,
-    "lng": 36.7076
+    "lng": 36.7076,
+    "image": "https://images.unsplash.com/photo-1547721064-da6cfb341d50"
   },
   {
     "id": "westlands",
@@ -21,7 +23,8 @@
     "tagline": "Eat late, stay later.",
     "description": "Nairobi's restaurant and nightlife density record-holder.",
     "lat": -1.2673,
-    "lng": 36.8065
+    "lng": 36.8065,
+    "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836"
   },
   {
     "id": "kilimani",
@@ -29,7 +32,8 @@
     "tagline": "Cafes, apartments and quiet parks.",
     "description": "Residential calm with some of the best casual food in the city.",
     "lat": -1.2921,
-    "lng": 36.7825
+    "lng": 36.7825,
+    "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085"
   },
   {
     "id": "gigiri",
@@ -37,6 +41,7 @@
     "tagline": "Diplomatic quarter with a forest edge.",
     "description": "UN campus, calm streets and the closest forest escape from town.",
     "lat": -1.2333,
-    "lng": 36.806
+    "lng": 36.806,
+    "image": "https://images.unsplash.com/photo-1448375240586-882707db888b"
   }
 ]

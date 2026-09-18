@@ -10,6 +10,7 @@
     "difficulty": "Easy",
     "lat": -1.2889,
     "lng": 36.8233,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Nairobi_skyline_from_Uhuru_Park.jpg/960px-Nairobi_skyline_from_Uhuru_Park.jpg",
     "mapUrl": "https://maps.google.com/?q=Kenyatta+International+Convention+Centre+Nairobi",
     "tasks": [
       { "id": "t1", "label": "Go up to the KICC rooftop viewing deck" },
@@ -31,6 +32,7 @@
     "difficulty": "Moderate",
     "lat": -1.2419,
     "lng": 36.8317,
+    "image": "https://images.unsplash.com/photo-1448375240586-882707db888b",
     "mapUrl": "https://maps.google.com/?q=Karura+Forest+Nairobi",
     "tasks": [
       { "id": "t1", "label": "Enter through the Limuru Road gate" },
@@ -52,6 +54,7 @@
     "difficulty": "Easy",
     "lat": -1.274,
     "lng": 36.8146,
+    "image": "https://images.unsplash.com/photo-1554907984-15263bfd63bd",
     "mapUrl": "https://maps.google.com/?q=Nairobi+National+Museum",
     "tasks": [
       { "id": "t1", "label": "See the hominid fossil collection" },
@@ -73,6 +76,7 @@
     "difficulty": "Easy",
     "lat": -1.3503,
     "lng": 36.712,
+    "image": "https://images.unsplash.com/photo-1547721064-da6cfb341d50",
     "mapUrl": "https://maps.google.com/?q=Karen+Blixen+Museum",
     "tasks": [
       { "id": "t1", "label": "Take the guided tour at Karen Blixen Museum" },
@@ -94,6 +98,7 @@
     "difficulty": "Easy",
     "lat": -1.2673,
     "lng": 36.8065,
+    "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
     "mapUrl": "https://maps.google.com/?q=Westlands+Nairobi",
     "tasks": [
       { "id": "t1", "label": "Start with coffee and pastry at Artcaffe" },

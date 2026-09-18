@@ -1,4 +1,7 @@
 import json
+import os
+import re
+import unicodedata
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
@@ -32,7 +35,7 @@ app = FastAPI(title="Kenya Quest API", version="0.1.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173", *[origin.strip() for origin in os.getenv("ALLOWED_ORIGINS", "").split(",") if origin.strip()]],
     allow_methods=["GET"],
     allow_headers=["*"],
 )
@@ -102,7 +105,8 @@ def get_quest(quest_id: str):
     quest = by_id(QUESTS, quest_id)
     if not quest:
         raise HTTPException(status_code=404, detail="Quest not found")
-    nearby = [expand_place(p) for p in PLACES if p["id"] in quest["nearbyPlaces"]]
+    # Places follow the quest's route order, not catalog order.
+    nearby = [expand_place(by_id(PLACES, place_id)) for place_id in quest["nearbyPlaces"]]
     deals = [expand_deal(d) for d in DEALS if d["placeId"] in quest["nearbyPlaces"]]
     return {**expand_quest(quest), "nearby": nearby, "deals": deals}
 
@@ -163,44 +167,76 @@ def list_deals(location: str | None = None):
     return results
 
 
+def normalize(value):
+    value = unicodedata.normalize("NFKD", value)
+    return "".join(c for c in value if not unicodedata.combining(c)).lower()
+
+
+def score(fields, words):
+    """Same ranking as the Worker: every term must match; names and word starts rank higher."""
+    total = 0
+    for word in words:
+        best = 0
+        for text, weight in fields:
+            if not text:
+                continue
+            text = normalize(text)
+            index = text.find(word)
+            if index == -1:
+                continue
+            at_word_start = index == 0 or not re.match(r"[a-z0-9]", text[index - 1])
+            best = max(best, weight * (2 if at_word_start else 1) * (2 if text == word else 1))
+        if not best:
+            return 0
+        total += best
+    return total
+
+
+def rank(items, fields, words):
+    scored = [(score(fields(item), words), order, item) for order, item in enumerate(items)]
+    return [item for s, _, item in sorted(scored, key=lambda e: (-e[0], e[1])) if s > 0]
+
+
 @app.get("/api/search")
 def search(q: str = ""):
-    term = q.strip().lower()
-    if not term:
+    if len(q) > 200:
+        raise HTTPException(status_code=400, detail="Search query must be 200 characters or fewer")
+    words = normalize(q).split()
+    if not words:
         return {"query": q, "quests": [], "places": [], "locations": [], "categories": []}
-
-    def hit(*fields):
-        return any(term in str(f).lower() for f in fields if f)
-
-    quests = [
-        expand_quest(quest)
-        for quest in QUESTS
-        if hit(
-            quest["title"],
-            quest["description"],
-            quest["difficulty"],
-            location_name(quest["location"]),
-            " ".join(quest["category"]),
-            " ".join(t["label"] for t in quest["tasks"]),
-        )
-    ]
-    places = [
-        expand_place(place)
-        for place in PLACES
-        if hit(
-            place["name"],
-            place["description"],
-            place["type"],
-            place["price"],
-            location_name(place["location"]),
-        )
-    ]
-    locations = [
-        location
-        for location in LOCATIONS
-        if hit(location["name"], location["tagline"], location["description"])
-    ]
-    categories = [c for c in CATEGORIES if term in c.lower()]
+    quests = rank(
+        [expand_quest(quest) for quest in QUESTS],
+        lambda quest: [
+            (quest["title"], 8),
+            (" ".join(quest["category"]), 5),
+            (quest["locationName"], 4),
+            (quest["difficulty"], 2),
+            (" ".join(t["label"] for t in quest["tasks"]), 2),
+            (quest["description"], 1),
+        ],
+        words,
+    )
+    places = rank(
+        [expand_place(place) for place in PLACES],
+        lambda place: [
+            (place["name"], 8),
+            (place["type"], 5),
+            (place["locationName"], 4),
+            (place["price"], 1),
+            (place["description"], 1),
+        ],
+        words,
+    )
+    locations = rank(
+        LOCATIONS,
+        lambda location: [
+            (location["name"], 8),
+            (location["tagline"], 2),
+            (location["description"], 1),
+        ],
+        words,
+    )
+    categories = rank(CATEGORIES, lambda name: [(name, 1)], words)
     return {
         "query": q,
         "quests": quests,
@@ -208,3 +244,8 @@ def search(q: str = ""):
         "locations": locations,
         "categories": categories,
     }
+
+
+@app.get("/api/discover")
+def discover():
+    return {"quests": list_quests(), "locations": list_locations(), "categories": list_categories()}
