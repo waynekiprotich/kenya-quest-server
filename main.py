@@ -50,6 +50,24 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# The catalog is public, read only and loaded from static files at boot, so every
+# 200 is safe to cache. `stale-while-revalidate` is what hides a Render cold start
+# from a returning visitor: the browser paints the old copy and refreshes behind it.
+# Errors stay uncached so a cold-start failure never sticks.
+CACHE_CONTROL = "public, max-age=300, s-maxage=3600, stale-while-revalidate=86400"
+
+
+@app.middleware("http")
+async def cache_public_reads(request, call_next):
+    response = await call_next(request)
+    if request.url.path == "/api/health":
+        response.headers.setdefault("Cache-Control", "no-store")
+    elif request.method == "GET" and response.status_code == 200:
+        response.headers.setdefault("Cache-Control", CACHE_CONTROL)
+    else:
+        response.headers.setdefault("Cache-Control", "no-store")
+    return response
+
 
 def by_id(items, item_id):
     for item in items:
